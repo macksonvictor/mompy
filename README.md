@@ -373,12 +373,6 @@ Discord community: **coming soon**.
 ## ⭐ Stars stats
 
 <p align="center">
-  <a href="https://github.com/hepterakt-studios/mompy/stargazers">
-    <img src="https://img.shields.io/github/stars/hepterakt-studios/mompy?style=for-the-badge&logo=github&label=Mompy%20Stars" alt="Mompy stars">
-  </a>
-</p>
-
-<p align="center">
   <a href="https://star-history.com/#hepterakt-studios/mompy&Date">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date&theme=dark" />
