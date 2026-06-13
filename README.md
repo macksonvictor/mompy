@@ -9,11 +9,11 @@
 [![HTML CSS JS](https://img.shields.io/badge/HTML%20%7C%20CSS%20%7C%20JS-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](#-technology-stack)
 [![Electron](https://img.shields.io/badge/desktop-Electron-47848f?style=for-the-badge&logo=electron&logoColor=white)](#-desktop-app)
 [![Python](https://img.shields.io/badge/python-training-3776ab?style=for-the-badge&logo=python&logoColor=white)](#-what-mompy-does)
-[![Discord](https://img.shields.io/badge/Discord-planned-5865F2?style=for-the-badge&logo=discord&logoColor=white)](#-community)
-[![Issues](https://img.shields.io/github/issues/macksonvictor/mompy?style=for-the-badge&logo=github)](https://github.com/macksonvictor/mompy/issues)
-[![Stars](https://img.shields.io/github/stars/macksonvictor/mompy?style=for-the-badge&logo=github)](https://github.com/macksonvictor/mompy/stargazers)
+[![Discord](https://img.shields.io/badge/Discord-coming%20soon-5865F2?style=for-the-badge&logo=discord&logoColor=white)](#-community)
+[![Issues](https://img.shields.io/github/issues/hepterakt-studios/mompy?style=for-the-badge&logo=github)](https://github.com/hepterakt-studios/mompy/issues)
+[![Stars](https://img.shields.io/github/stars/hepterakt-studios/mompy?style=for-the-badge&logo=github)](https://github.com/hepterakt-studios/mompy/stargazers)
 
-[English](https://zdoc.app/en/macksonvictor/mompy) | [Português](https://zdoc.app/pt/macksonvictor/mompy)
+[English](https://zdoc.app/en/hepterakt-studios/mompy) | [Português](https://zdoc.app/pt/hepterakt-studios/mompy)
 
 **Mompy** is a retro CRT-style desktop app that helps beginners learn Python through guided missions, instant feedback, local progress, sound effects, and a friendly monitor mascot.
 
@@ -24,10 +24,10 @@
 
 ## 📦 Download and source
 
-- **Source code:** [github.com/macksonvictor/mompy](https://github.com/macksonvictor/mompy)
-- **Desktop downloads:** [GitHub Releases](https://github.com/macksonvictor/mompy/releases)
+- **Source code:** [github.com/hepterakt-studios/mompy](https://github.com/hepterakt-studios/mompy)
+- **Desktop downloads:** [GitHub Releases](https://github.com/hepterakt-studios/mompy/releases)
 - **Official website:** [mompy.co](https://mompy.co)
-- **Issues and feedback:** [GitHub Issues](https://github.com/macksonvictor/mompy/issues)
+- **Issues and feedback:** [GitHub Issues](https://github.com/hepterakt-studios/mompy/issues)
 
 Mompy is being prepared as a cross-platform desktop app. Each operating system may receive its own package.
 
@@ -87,8 +87,6 @@ The goal is simple: **open Mompy, complete missions, learn Python, and keep prog
 
 Mompy uses a retro-futuristic visual style inspired by old terminals, CRT monitors, and industrial control panels.
 
-Main characteristics:
-
 - dark industrial interface;
 - green CRT glow;
 - terminal-style typography;
@@ -126,29 +124,17 @@ Mompy should feel like an old intelligent training machine, not a normal website
 
 ## 🚀 Roadmap
 
-This roadmap shows the public product direction without internal planning notes.
-
 | Stage | Focus |
 | --- | --- |
 | Now | Finish the core UI, mission flow, local profile, progress system, audio, and mascot behavior. |
 | Next | Package Mompy as a desktop app and prepare first test builds for Windows, macOS, and Linux. |
-| Later | Publish releases, create the official website, expand missions, add documentation, and open community channels. |
+| Later | Publish releases, launch the official website, expand missions, add documentation, and open community channels. |
 
 ---
 
 ## 🔒 Local-first philosophy
 
-Mompy is designed to work without requiring an online account.
-
-For the first version, the following data should stay on the user's computer:
-
-- first name;
-- language preference;
-- current mission;
-- completed missions;
-- audio settings;
-- interface settings;
-- progress state.
+Mompy is designed to work without requiring an online account. For the first version, the user's first name, language preference, current mission, completed missions, audio settings, interface settings, and progress state should stay on the user's computer.
 
 Future online features may exist, but they should be optional.
 
@@ -165,8 +151,6 @@ Electron
 ↓
 Desktop app releases
 ```
-
-Distribution model:
 
 ```txt
 Mompy app = installable desktop app
@@ -261,7 +245,7 @@ mompy/
 Clone the repository:
 
 ```bash
-git clone https://github.com/macksonvictor/mompy.git
+git clone https://github.com/hepterakt-studios/mompy.git
 cd mompy
 ```
 
@@ -358,12 +342,12 @@ The website can be used for project presentation, screenshots, downloads, releas
 
 ## 🤔 Questions? Problems? Suggestions?
 
-Report bugs, request features, or suggest improvements through [GitHub Issues](https://github.com/macksonvictor/mompy/issues).
+Report bugs, request features, or suggest improvements through [GitHub Issues](https://github.com/hepterakt-studios/mompy/issues).
 
 Use the issue templates when opening a new report:
 
-- [Bug report](https://github.com/macksonvictor/mompy/issues/new?template=bug_report.md)
-- [Feature request](https://github.com/macksonvictor/mompy/issues/new?template=feature_request.md)
+- [Bug report](https://github.com/hepterakt-studios/mompy/issues/new?template=bug_report.md)
+- [Feature request](https://github.com/hepterakt-studios/mompy/issues/new?template=feature_request.md)
 
 Security reports should follow the [Security Policy](SECURITY.md).
 
@@ -371,9 +355,7 @@ Security reports should follow the [Security Policy](SECURITY.md).
 
 ## 💬 Community
 
-Discord community: **planned**.
-
-The Discord badge at the top is reserved for the future public community channel.
+Discord community: **coming soon**.
 
 ---
 
@@ -388,11 +370,21 @@ The Discord badge at the top is reserved for the future public community channel
 
 ---
 
-## ⭐ Stars
+## ⭐ Stars stats
 
 <p align="center">
-  <a href="https://github.com/macksonvictor/mompy/stargazers">
-    <img src="https://img.shields.io/github/stars/macksonvictor/mompy?style=for-the-badge&logo=github&label=Mompy%20Stars" alt="Mompy stars">
+  <a href="https://github.com/hepterakt-studios/mompy/stargazers">
+    <img src="https://img.shields.io/github/stars/hepterakt-studios/mompy?style=for-the-badge&logo=github&label=Mompy%20Stars" alt="Mompy stars">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://star-history.com/#hepterakt-studios/mompy&Date">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date&theme=dark" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date" />
+      <img alt="Mompy Star History Chart" src="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date" />
+    </picture>
   </a>
 </p>
 
@@ -400,8 +392,8 @@ The Discord badge at the top is reserved for the future public community channel
 
 ## ⚡ Contributors
 
-<a href="https://github.com/macksonvictor/mompy/graphs/contributors" alt="View Contributors">
-  <img src="https://contrib.rocks/image?repo=macksonvictor/mompy&max=1000&columns=10" alt="Mompy contributors" />
+<a href="https://github.com/hepterakt-studios/mompy/graphs/contributors" alt="View Contributors">
+  <img src="https://contrib.rocks/image?repo=hepterakt-studios/mompy&max=1000&columns=10" alt="Mompy contributors" />
 </a>
 
 ---
@@ -422,6 +414,8 @@ These files are also available in the GitHub repository navigation when supporte
 Created by **Mackson Victor**.
 
 GitHub: [macksonvictor](https://github.com/macksonvictor)
+
+Organization: [Hepterakt Studios](https://github.com/hepterakt-studios)
 
 ---
 
