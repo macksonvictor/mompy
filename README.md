@@ -370,14 +370,14 @@ Discord community: **coming soon**.
 
 ---
 
-## ⭐ Stars stats
+## ⭐ Star History
 
 <p align="center">
-  <a href="https://star-history.com/#hepterakt-studios/mompy&Date">
+  <a href="https://www.star-history.com/?repos=hepterakt-studios%2Fmompy&type=date&legend=top-left">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date&theme=dark" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date" />
-      <img alt="Mompy Star History Chart" src="https://api.star-history.com/svg?repos=hepterakt-studios/mompy&type=Date" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=hepterakt-studios/mompy&type=date&theme=dark&legend=top-left" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=hepterakt-studios/mompy&type=date&legend=top-left" />
+      <img alt="Mompy Star History Chart" src="https://api.star-history.com/chart?repos=hepterakt-studios/mompy&type=date&legend=top-left" />
     </picture>
   </a>
 </p>
