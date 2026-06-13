@@ -1,85 +1,91 @@
-<svg width="900" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Mompy retro monitor cover</title>
-  <desc id="desc">A transparent retro CRT monitor with a green terminal cat on the screen.</desc>
+<svg width="900" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Mompy retro monitor with GitHub logo</title>
+  <desc id="desc">A retro green CRT Mompy monitor with a glowing GitHub logo inside the screen.</desc>
   <defs>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.22 0 0 0 0 1 0 0 0 0 0.08 0 0 0 0.8 0" result="greenBlur"/>
+    <filter id="outerShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="28" stdDeviation="20" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+    <filter id="crtGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.18 0 0 0 0 1 0 0 0 0 0.06 0 0 0 0.9 0" result="greenBlur"/>
       <feMerge>
         <feMergeNode in="greenBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
-      <feDropShadow dx="0" dy="20" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
+    <filter id="softLogoGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.45 0 0 0 0 1 0 0 0 0 0.2 0 0 0 0.65 0" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
-    <linearGradient id="metal" x1="150" y1="70" x2="750" y2="350" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#2f352f"/>
-      <stop offset="0.45" stop-color="#111611"/>
-      <stop offset="1" stop-color="#3a3d34"/>
+    <linearGradient id="bodyMetal" x1="190" y1="70" x2="710" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42503b"/>
+      <stop offset="0.18" stop-color="#111811"/>
+      <stop offset="0.5" stop-color="#071007"/>
+      <stop offset="0.82" stop-color="#1d2a1a"/>
+      <stop offset="1" stop-color="#516146"/>
     </linearGradient>
-    <radialGradient id="screenGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 184) rotate(90) scale(150 270)">
-      <stop stop-color="#143a14"/>
-      <stop offset="0.55" stop-color="#061506"/>
-      <stop offset="1" stop-color="#020602"/>
+    <radialGradient id="screenGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(450 245) rotate(90) scale(180 330)">
+      <stop stop-color="#164016"/>
+      <stop offset="0.55" stop-color="#061806"/>
+      <stop offset="1" stop-color="#010501"/>
     </radialGradient>
+    <pattern id="dotGrid" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.7" fill="#39ff14" opacity="0.36"/>
+      <circle cx="9" cy="9" r="1.1" fill="#39ff14" opacity="0.18"/>
+    </pattern>
     <pattern id="scanlines" width="8" height="8" patternUnits="userSpaceOnUse">
-      <rect width="8" height="4" fill="#39ff14" opacity="0.035"/>
+      <rect width="8" height="2" fill="#39ff14" opacity="0.045"/>
+      <rect y="4" width="8" height="1" fill="#000000" opacity="0.28"/>
     </pattern>
   </defs>
 
-  <!-- transparent background intentionally left empty -->
-
-  <g filter="url(#softShadow)">
-    <!-- outer monitor body -->
-    <path d="M170 72 C170 55 184 42 201 42 H699 C716 42 730 55 730 72 V300 C730 317 716 330 699 330 H201 C184 330 170 317 170 300 V72Z" fill="url(#metal)" stroke="#6f7668" stroke-width="5"/>
-    <path d="M192 68 H708 V306 H192 V68Z" fill="#0b0f0b" stroke="#2d352d" stroke-width="6"/>
-
-    <!-- bolts -->
-    <circle cx="205" cy="60" r="9" fill="#070907" stroke="#8a907c" stroke-width="2"/>
-    <circle cx="695" cy="60" r="9" fill="#070907" stroke="#8a907c" stroke-width="2"/>
-    <circle cx="205" cy="312" r="9" fill="#070907" stroke="#8a907c" stroke-width="2"/>
-    <circle cx="695" cy="312" r="9" fill="#070907" stroke="#8a907c" stroke-width="2"/>
-    <path d="M201 60 L209 60 M205 56 L205 64" stroke="#2d332b" stroke-width="2"/>
-    <path d="M691 60 L699 60 M695 56 L695 64" stroke="#2d332b" stroke-width="2"/>
-    <path d="M201 312 L209 312 M205 308 L205 316" stroke="#2d332b" stroke-width="2"/>
-    <path d="M691 312 L699 312 M695 308 L695 316" stroke="#2d332b" stroke-width="2"/>
+  <g filter="url(#outerShadow)">
+    <!-- monitor body -->
+    <path d="M166 100 C166 62 198 34 236 34 H664 C702 34 734 62 734 100 V391 C734 431 702 460 664 460 H236 C198 460 166 431 166 391 V100Z" fill="url(#bodyMetal)" stroke="#8cff3a" stroke-opacity="0.72" stroke-width="4"/>
+    <path d="M184 105 C184 76 209 54 238 54 H662 C691 54 716 76 716 105 V382 C716 411 691 433 662 433 H238 C209 433 184 411 184 382 V105Z" fill="url(#dotGrid)" opacity="0.78"/>
+    <path d="M184 105 C184 76 209 54 238 54 H662 C691 54 716 76 716 105 V382 C716 411 691 433 662 433 H238 C209 433 184 411 184 382 V105Z" stroke="#b8ff93" stroke-opacity="0.35" stroke-width="2"/>
 
     <!-- screen -->
-    <rect x="230" y="92" width="440" height="195" rx="18" fill="url(#screenGlow)" stroke="#42ff1c" stroke-opacity="0.45" stroke-width="3"/>
-    <rect x="230" y="92" width="440" height="195" rx="18" fill="url(#scanlines)"/>
-    <path d="M252 112 H648" stroke="#39ff14" stroke-opacity="0.16" stroke-width="2"/>
-    <path d="M252 266 H648" stroke="#39ff14" stroke-opacity="0.12" stroke-width="2"/>
+    <rect x="245" y="125" width="410" height="245" rx="35" fill="url(#screenGlow)" stroke="#8cff3a" stroke-opacity="0.84" stroke-width="5"/>
+    <rect x="245" y="125" width="410" height="245" rx="35" fill="url(#scanlines)"/>
+    <rect x="261" y="141" width="378" height="213" rx="26" stroke="#39ff14" stroke-opacity="0.16" stroke-width="2"/>
 
-    <!-- side controls -->
-    <rect x="687" y="108" width="24" height="24" rx="4" fill="#0e140e" stroke="#42ff1c" stroke-opacity="0.35"/>
-    <rect x="687" y="142" width="24" height="24" rx="4" fill="#0e140e" stroke="#42ff1c" stroke-opacity="0.25"/>
-    <rect x="687" y="176" width="24" height="24" rx="4" fill="#0e140e" stroke="#42ff1c" stroke-opacity="0.18"/>
-    <circle cx="699" cy="120" r="5" fill="#39ff14" opacity="0.55"/>
-    <path d="M693 154 H705 M699 148 V160" stroke="#39ff14" stroke-opacity="0.55" stroke-width="2"/>
-    <path d="M693 188 H705" stroke="#39ff14" stroke-opacity="0.45" stroke-width="2"/>
+    <!-- screen subtle grid -->
+    <g opacity="0.18">
+      <path d="M285 171 H615 M285 203 H615 M285 235 H615 M285 267 H615 M285 299 H615 M285 331 H615" stroke="#39ff14" stroke-width="1"/>
+      <path d="M315 153 V347 M355 153 V347 M395 153 V347 M435 153 V347 M475 153 V347 M515 153 V347 M555 153 V347 M595 153 V347" stroke="#39ff14" stroke-width="1"/>
+    </g>
 
-    <!-- terminal cat mascot, original simplified cat silhouette -->
-    <g filter="url(#glow)" stroke="#39ff14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M345 196 C345 154 375 125 417 125 H483 C525 125 555 154 555 196 C555 238 521 263 450 263 C379 263 345 238 345 196Z" fill="none"/>
-      <path d="M377 133 L358 103 L407 126" fill="none"/>
-      <path d="M523 133 L542 103 L493 126" fill="none"/>
-      <circle cx="420" cy="183" r="7" fill="#39ff14" stroke="none"/>
-      <circle cx="480" cy="183" r="7" fill="#39ff14" stroke="none"/>
-      <path d="M450 197 L443 208 H457 Z" fill="#39ff14" stroke="none"/>
-      <path d="M450 211 C439 224 421 226 407 216" fill="none" stroke-width="4"/>
-      <path d="M450 211 C461 224 479 226 493 216" fill="none" stroke-width="4"/>
-      <path d="M392 202 H335" stroke-width="4" opacity="0.8"/>
-      <path d="M394 216 H341" stroke-width="4" opacity="0.65"/>
-      <path d="M508 202 H565" stroke-width="4" opacity="0.8"/>
-      <path d="M506 216 H559" stroke-width="4" opacity="0.65"/>
+    <!-- GitHub logo inside CRT screen -->
+    <g filter="url(#softLogoGlow)" transform="translate(0 0)">
+      <circle cx="450" cy="219" r="62" fill="#39ff14" opacity="0.92"/>
+      <path d="M421 218 C421 203 432 191 450 191 C468 191 479 203 479 218 C479 232 469 243 450 243 C431 243 421 232 421 218Z" fill="#041004"/>
+      <path d="M428 200 L417 179 L442 193" fill="#041004"/>
+      <path d="M472 200 L483 179 L458 193" fill="#041004"/>
+      <path d="M428 236 C414 240 404 235 398 224 C394 235 399 247 412 253 C425 260 439 253 444 242" fill="#041004"/>
+      <path d="M439 246 V264 M461 246 V264" stroke="#041004" stroke-width="8" stroke-linecap="round"/>
+      <text x="450" y="315" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900" letter-spacing="-3" fill="#39ff14">GitHub</text>
+    </g>
+
+    <!-- speaker and button details -->
+    <g opacity="0.9">
+      <rect x="220" y="385" width="92" height="38" rx="8" fill="#061006" stroke="#39ff14" stroke-opacity="0.34"/>
+      <path d="M236 394 V414 M252 394 V414 M268 394 V414 M284 394 V414" stroke="#9cff63" stroke-width="5" stroke-linecap="round" opacity="0.72"/>
+      <rect x="603" y="385" width="76" height="38" rx="8" fill="#061006" stroke="#39ff14" stroke-opacity="0.34"/>
+      <circle cx="641" cy="404" r="9" fill="#39ff14" opacity="0.82"/>
+      <rect x="637" y="400" width="8" height="8" fill="#061006" opacity="0.85"/>
     </g>
 
     <!-- base -->
-    <path d="M330 330 H570 L605 370 H295 L330 330Z" fill="#141914" stroke="#5b6354" stroke-width="5"/>
-    <rect x="265" y="365" width="370" height="22" rx="8" fill="#111511" stroke="#4d554b" stroke-width="4"/>
+    <path d="M294 460 H606 L634 512 H266 L294 460Z" fill="#111b0f" stroke="#8cff3a" stroke-opacity="0.52" stroke-width="4"/>
+    <rect x="244" y="502" width="412" height="28" rx="10" fill="#071007" stroke="#8cff3a" stroke-opacity="0.38" stroke-width="4"/>
+    <rect x="316" y="474" width="268" height="14" rx="5" fill="#39ff14" opacity="0.18"/>
   </g>
 
-  <!-- small caption inside screen -->
-  <text x="450" y="118" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#39ff14" opacity="0.82" filter="url(#glow)">MOMPY TRAINING CONSOLE</text>
+  <!-- tiny CRT caption -->
+  <text x="450" y="112" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="20" fill="#9cff63" opacity="0.86" filter="url(#crtGlow)">MOMPY · GITHUB</text>
 </svg>
