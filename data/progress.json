@@ -1,0 +1,9 @@
+{
+  "completed_briefing_ids": [],
+  "completed_mission_ids": [],
+  "current_mission_index": 0,
+  "last_updated_at": null,
+  "planned_total_missions": 30,
+  "skipped_briefing_ids": [],
+  "total_xp": 0
+}

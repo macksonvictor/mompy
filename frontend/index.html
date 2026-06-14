@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050605" />
+    <title>Mompy</title>
+    <link rel="icon" href="./assets/mompy_idle.ico" sizes="any" />
+    <link rel="shortcut icon" href="./assets/mompy_idle.ico" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./css/styles.css?v=44" />
+  </head>
+  <body>
+    <section id="loadingScreen" class="loading-screen" aria-label="Carregando Mompy" aria-live="polite">
+      <div class="loading-shell">
+        <div class="loading-visual">
+          <img
+            class="loading-boot-image"
+            src="./assets/hepterakt_boot_monitor.png"
+            alt=""
+            draggable="false"
+            aria-hidden="true"
+          />
+          <img
+            class="loading-base-image"
+            src="./assets/mompy_loading_base.png"
+            alt="Mompy"
+            draggable="false"
+          />
+          <div class="loading-overlay">
+            <div id="loadingBranding" class="loading-branding" aria-label="Hepterakt Studios">
+              <div class="loading-branding-logo-crop">
+                <img src="./assets/hepterakt_boot_logo_green.png" alt="Hepterakt" draggable="false" />
+              </div>
+            </div>
+            <div class="loading-bar" aria-label="Carregando">
+              <div id="loadingProgress" class="loading-progress"></div>
+            </div>
+            <p class="loading-text">Loading...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="stage" aria-label="Mompy Python training interface">
+      <section class="machine" aria-label="Mompy workspace">
+        <div class="overlay">
+          <header class="app-header">
+            <div class="level-panel" aria-label="Nível atual">
+              <span class="level-label">Nivel</span>
+              <span id="levelValue" class="level-value">01</span>
+              <span class="level-track" aria-hidden="true">
+                <span id="levelFill" class="level-fill"></span>
+              </span>
+            </div>
+            <img class="brand-logo" src="./assets/name_mompy.png" alt="Mompy" draggable="false" />
+            <div class="header-actions">
+              <button id="settingsButton" class="top-icon-button" type="button" aria-label="Configurações">
+                <span class="top-icon-mask settings-mask" aria-hidden="true"></span>
+              </button>
+              <button id="fullscreenButton" class="top-icon-button fullscreen-toggle" type="button" aria-label="Expandir janela">
+                <span class="top-icon-mask fullscreen-expand-mask" aria-hidden="true"></span>
+                <span class="top-icon-mask fullscreen-restore-mask" aria-hidden="true"></span>
+              </button>
+            </div>
+          </header>
+
+          <section id="startScreen" class="start-screen" aria-label="Tela de entrada Mompy">
+            <div class="start-mascot-panel" aria-label="Mompy">
+              <div class="start-mompy-wrapper">
+                <img
+                  id="startMompySprite"
+                  class="start-mompy-sprite"
+                  src="./assets/mompy_idle.png"
+                  alt="Mompy"
+                  draggable="false"
+                />
+                <div id="startMompyTerminal" class="start-mompy-terminal" hidden aria-hidden="true">
+                  <pre id="startMompyTerminalOutput"></pre>
+                  <span class="start-mompy-terminal-cursor" aria-hidden="true">█</span>
+                </div>
+              </div>
+            </div>
+
+            <section class="start-main-panel" aria-label="Console de treinamento Python">
+              <h1>Python Training Console</h1>
+              <div class="start-actions">
+                <button id="startButton" class="start-command-button" type="button">
+                  <span class="start-command-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 4v16l12-8z"></path>
+                    </svg>
+                  </span>
+                  <span>Start</span>
+                </button>
+                <button id="continueButton" class="start-command-button" type="button">
+                  <span class="start-command-icon" aria-hidden="true">
+                    <svg class="continue-icon" viewBox="0 0 24 24" focusable="false">
+                      <path class="continue-step" d="M6 5v14"></path>
+                      <path class="continue-play" d="M10 5v14l9-7z"></path>
+                    </svg>
+                  </span>
+                  <span>Continue</span>
+                </button>
+              </div>
+            </section>
+
+            <section class="start-stats-bar" aria-label="Informações do usuário">
+              <article class="start-stat">
+                <div class="start-stat-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                    <circle cx="12" cy="10" r="3"></circle>
+                    <path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"></path>
+                  </svg>
+                </div>
+                <div class="start-stat-text">
+                  <span class="start-stat-label">User</span>
+                  <span id="startUserName" class="start-stat-value">Mackson Victor</span>
+                </div>
+              </article>
+
+              <article class="start-stat">
+                <div class="start-stat-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M13 17V9"></path>
+                    <path d="M18 17v-3"></path>
+                    <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                    <path d="M8 17V5"></path>
+                  </svg>
+                </div>
+                <div class="start-stat-text">
+                  <span class="start-stat-label">Level</span>
+                  <span id="startUserLevel" class="start-stat-value">01 · Beginner</span>
+                </div>
+              </article>
+
+              <article class="start-stat">
+                <div class="start-stat-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect>
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                    <path d="m9 14 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <div class="start-stat-text">
+                  <span class="start-stat-label">Missions completed</span>
+                  <span id="startMissionCount" class="start-stat-value">0 / 30</span>
+                </div>
+              </article>
+            </section>
+          </section>
+
+          <div id="onboardingOverlay" class="onboarding-overlay" hidden aria-hidden="true">
+            <section class="onboarding-modal" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle">
+              <img
+                class="onboarding-monitor"
+                src="./assets/desligando5.png"
+                alt="Mompy"
+                draggable="false"
+              />
+              <div class="onboarding-terminal">
+                <pre id="onboardingTerminalOutput" aria-live="polite"></pre>
+                <h2 id="onboardingTitle" class="onboarding-title">Primeiro acesso</h2>
+                <label class="onboarding-label" for="onboardingNameInput">Qual é o seu primeiro nome?</label>
+                <div class="onboarding-input-shell">
+                  <span aria-hidden="true">&gt;</span>
+                  <input
+                    id="onboardingNameInput"
+                    type="text"
+                    maxlength="24"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Digite aqui seu primeiro nome"
+                  />
+                </div>
+                <p id="onboardingError" class="onboarding-error" aria-live="polite"></p>
+                <button id="onboardingContinueButton" class="onboarding-button" type="button">Continue</button>
+              </div>
+            </section>
+          </div>
+
+          <section class="mascot-panel" aria-label="Mompy mascot">
+            <img
+              id="mompySprite"
+              class="mompy-sprite"
+              src="./assets/mompy_idle.png"
+              alt="Mompy"
+              draggable="false"
+            />
+            <div id="mompyScreenMessage" class="mompy-screen-message" hidden>
+              <div class="mompy-screen-text">
+                <p>Missão concluída.</p>
+                <p>Avançar?</p>
+              </div>
+              <div class="mompy-screen-actions">
+                <button id="repeatMissionButton" type="button">Repetir</button>
+                <button id="nextMissionButton" type="button">Próxima missão</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="mission-panel" aria-label="Missão atual">
+            <p class="panel-label">Mission</p>
+            <article class="mission-copy" id="missionCopy">
+              <h2>Print output</h2>
+              <p>
+                Primeiro passo: faça o programa escrever uma mensagem no console.
+              </p>
+              <p>
+                Escreva um <code>print()</code> que mostre exatamente:
+                <strong>Hello, Mompy!</strong>
+              </p>
+            </article>
+          </section>
+
+          <section class="editor-panel" aria-label="Editor de código">
+            <div class="editor-topline">
+              <p class="panel-label">Code editor</p>
+              <div class="editor-actions" aria-label="Ações do editor">
+                <button id="backButton" class="editor-button" type="button">← Back</button>
+                <button id="helpButton" class="editor-button" type="button">? Help</button>
+                <button id="runButton" class="editor-button run-button" type="button">▶ Run</button>
+              </div>
+            </div>
+
+            <div class="editor-shell" data-editor-host>
+              <div class="line-numbers" id="lineNumbers" aria-hidden="true">1</div>
+              <textarea
+                id="codeEditor"
+                spellcheck="false"
+                autocomplete="off"
+                autocapitalize="off"
+                aria-label="Editor de código Python"
+              ># escreva aqui
+</textarea>
+            </div>
+          </section>
+
+          <section class="output-panel" aria-label="Output">
+            <p class="panel-label">Output</p>
+            <pre id="outputConsole" aria-live="polite">Mompy pronto. Escreva o código e clique em Run.</pre>
+          </section>
+
+          <div id="modalBackdrop" class="modal-backdrop" hidden>
+            <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+              <button id="modalCloseButton" class="modal-close-button" type="button" aria-label="Fechar">X</button>
+              <h2 id="modalTitle"></h2>
+              <div id="modalBody" class="modal-body"></div>
+              <div id="modalActions" class="modal-actions"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/app.js?v=44"></script>
+  </body>
+</html>
