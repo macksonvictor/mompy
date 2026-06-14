@@ -1,9 +1,9 @@
-const CACHE_NAME = "mompy-v44";
+const CACHE_NAME = "mompy-v45";
 const FILES = [
   "./",
   "./index.html",
-  "./css/styles.css?v=44",
-  "./js/app.js?v=44",
+  "./css/styles.css?v=45",
+  "./js/app.js?v=45",
   "./manifest.webmanifest",
   "./assets/grade.png",
   "./assets/grade_entrada.png",

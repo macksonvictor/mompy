@@ -51,6 +51,95 @@ const settingsState = {
   mompyAnimations: true,
 };
 
+let pythonBackendConnected = false;
+
+function getPythonBackend() {
+  return window.pywebview?.api || null;
+}
+
+async function callPythonBackend(method, ...args) {
+  const backend = getPythonBackend();
+
+  if (!backend || typeof backend[method] !== "function") {
+    return null;
+  }
+
+  try {
+    const result = await backend[method](...args);
+    pythonBackendConnected = true;
+    return result;
+  } catch (error) {
+    console.warn(`Mompy Python backend call failed: ${method}`, error);
+    return null;
+  }
+}
+
+function applyPythonProgress(progress) {
+  if (!progress || typeof progress !== "object") {
+    return;
+  }
+
+  const completedIds = progress.completed_mission_ids || progress.completedMissionIds;
+  const missionIndex = progress.current_mission_index ?? progress.currentMissionIndex;
+  const xp = progress.total_xp ?? progress.totalXp;
+
+  if (Number.isInteger(missionIndex)) {
+    currentMissionIndex = clampMissionIndex(missionIndex);
+  }
+
+  if (Array.isArray(completedIds)) {
+    completedMissionIds = sanitizeCompletedMissionIds(completedIds);
+  }
+
+  if (Number.isFinite(Number(xp))) {
+    totalXp = Number(xp);
+  } else {
+    totalXp = calculateXpFromCompletedMissions(completedMissionIds);
+  }
+
+  updateProgressUI();
+}
+
+function applyPythonProfile(profile) {
+  if (!profile || typeof profile !== "object" || !profile.name) {
+    return;
+  }
+
+  applyUserProfile({ firstName: profile.name });
+  renderStartUserInfo();
+}
+
+async function syncPythonBackendState() {
+  const state = await callPythonBackend("get_bootstrap_state");
+
+  if (!state) {
+    return;
+  }
+
+  applyPythonProfile(state.profile);
+  applyPythonProgress(state.progress);
+
+  const codeEditor = document.getElementById("codeEditor");
+  if (codeEditor) {
+    renderMission(currentMission());
+    codeEditor.value = currentMission().starterCode || codeEditor.value;
+    updateLineNumbers();
+  }
+}
+
+function schedulePythonBackendSync() {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", syncPythonBackendState, { once: true });
+    return;
+  }
+
+  setTimeout(syncPythonBackendState, 0);
+}
+
+document.addEventListener("pywebviewready", () => {
+  schedulePythonBackendSync();
+});
+
 const learningBriefings = [
   {
     id: "briefing_001",
@@ -1286,6 +1375,7 @@ function resetProgress(options = {}) {
   }
 
   updateProgressUI();
+  callPythonBackend("reset_progress").then(applyPythonProgress);
 
   if (trainingStarted && !options.keepMissionView) {
     openMissionOrBriefing({
@@ -1816,6 +1906,12 @@ function saveUserProfile(firstName) {
   localStorage.setItem(USER_PROFILE_KEY, JSON.stringify(profile));
   applyUserProfile(profile);
   renderStartUserInfo();
+  callPythonBackend("save_profile", {
+    name: profile.firstName,
+    language: profile.language,
+    level_preference: profile.levelPreference,
+    email: profile.email,
+  }).then(applyPythonProfile);
   return profile;
 }
 
@@ -1823,6 +1919,7 @@ function clearUserProfile() {
   localStorage.removeItem(USER_PROFILE_KEY);
   applyUserProfile(null);
   renderStartUserInfo();
+  callPythonBackend("logout_profile").then(applyPythonProfile);
 }
 
 function renderStartUserInfo() {
@@ -2398,6 +2495,7 @@ function completeMission(result) {
   }
 
   saveProgress();
+  callPythonBackend("complete_mission", mission.id).then(applyPythonProgress);
   clearTimeout(completionTimer);
   setMissionActionsEnabled(false);
   clearMompyScreenMessage();
@@ -2486,6 +2584,17 @@ async function validateCode(code) {
       ok: false,
       output: "Nenhum código para executar.",
       detail: mission.help || "Escreva o código pedido no editor.",
+    };
+  }
+
+  const backendValidation = await callPythonBackend("validate_mission", mission.id, code);
+  if (backendValidation && typeof backendValidation.correct === "boolean") {
+    return {
+      ok: Boolean(backendValidation.correct),
+      output: backendValidation.expected_output || mission.expectedOutput,
+      detail: backendValidation.correct
+        ? backendValidation.message || "Missão concluída."
+        : backendValidation.hints?.[0] || backendValidation.message || mission.help,
     };
   }
 

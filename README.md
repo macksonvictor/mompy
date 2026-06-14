@@ -51,6 +51,26 @@ Depois acesse:
 http://127.0.0.1:8770/
 ```
 
+## App desktop Python
+
+Instale a dependencia desktop:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Abra o Mompy como aplicativo Python com pywebview:
+
+```bash
+python main.py
+```
+
+Para apenas verificar o backend sem abrir janela:
+
+```bash
+python main.py --check
+```
+
 ## Backend Python
 
 O backend Python foi criado para assumir gradualmente a logica real do app:
@@ -60,7 +80,7 @@ O backend Python foi criado para assumir gradualmente a logica real do app:
 - validacao simples das respostas;
 - progresso local;
 - XP e nivel;
-- API interna preparada para pywebview;
+- API interna conectada ao frontend via pywebview;
 - estrutura futura de execucao segura de codigo.
 
 Nesta fase, o backend ainda nao executa codigo livre do usuario. Isso fica para a fase de sandbox.

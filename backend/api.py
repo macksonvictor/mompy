@@ -19,6 +19,22 @@ class MompyAPI:
     def __init__(self, progress_path: Path | None = None) -> None:
         self.progress_path = progress_path
 
+    def get_bootstrap_state(self) -> dict:
+        return {
+            "backend": {
+                "name": "Mompy Python Backend",
+                "phase": "10.3",
+                "connected": True,
+            },
+            "profile": self.get_profile(),
+            "progress": self.get_progress(),
+            "current_mission": self.get_current_mission(),
+            "missions": self.get_missions(),
+            "lessons": self.get_lessons(),
+            "briefings": self.get_briefings(),
+            "next_briefing": self.get_next_briefing(),
+        }
+
     def get_missions(self) -> list[dict]:
         return get_missions()
 

@@ -19,6 +19,19 @@ class ApiTests(unittest.TestCase):
             self.assertIn("progress", result)
             self.assertEqual(result["progress"]["completed_mission_ids"], ["mission_001"])
 
+    def test_bootstrap_state_contains_frontend_bridge_payload(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            api = MompyAPI(progress_path=Path(tmp) / "progress.json")
+            state = api.get_bootstrap_state()
+
+            self.assertTrue(state["backend"]["connected"])
+            self.assertEqual(state["backend"]["phase"], "10.3")
+            self.assertIn("profile", state)
+            self.assertIn("progress", state)
+            self.assertEqual(state["current_mission"]["id"], "mission_001")
+            self.assertGreaterEqual(len(state["missions"]), 20)
+            self.assertGreaterEqual(len(state["lessons"]), 6)
+
 
 if __name__ == "__main__":
     unittest.main()
