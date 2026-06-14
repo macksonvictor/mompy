@@ -31,7 +31,7 @@ class ProgressTests(unittest.TestCase):
             )
             progress = load_progress(path)
             self.assertEqual(progress["completed_mission_ids"], ["mission_001"])
-            self.assertEqual(progress["current_mission_index"], 19)
+            self.assertEqual(progress["current_mission_index"], 29)
 
 
 if __name__ == "__main__":

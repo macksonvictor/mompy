@@ -2535,10 +2535,10 @@ async function validateCode(code) {
   if (backendValidation && typeof backendValidation.correct === "boolean") {
     return {
       ok: Boolean(backendValidation.correct),
-      output: backendValidation.expected_output || mission.expectedOutput,
+      output: backendValidation.actual_output || backendValidation.expected_output || mission.expectedOutput,
       detail: backendValidation.correct
         ? backendValidation.message || "Missão concluída."
-        : backendValidation.hints?.[0] || backendValidation.message || mission.help,
+        : backendValidation.runtime_error || backendValidation.hints?.[0] || backendValidation.message || mission.help,
     };
   }
 
