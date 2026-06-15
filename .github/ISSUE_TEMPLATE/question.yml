@@ -1,0 +1,37 @@
+name: Question
+description: Ask a question about using, running or contributing to Mompy
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for questions about the project. For bugs, use the bug report form.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      placeholder: "What do you want to know?"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Running from source
+        - Windows build
+        - Python backend
+        - Lessons / missions
+        - Contributing
+        - GitHub / releases
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Add screenshots, logs or details if useful.
+    validations:
+      required: false
