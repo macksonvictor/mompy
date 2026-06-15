@@ -3,13 +3,24 @@
 from __future__ import annotations
 
 import json
+import os
+import sys
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import Any
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = ROOT_DIR / "data"
+
+
+def _resolve_data_dir() -> Path:
+    if getattr(sys, "frozen", False):
+        base_dir = os.getenv("LOCALAPPDATA") or os.getenv("APPDATA") or str(Path.home())
+        return Path(base_dir) / "Mompy" / "data"
+    return ROOT_DIR / "data"
+
+
+DATA_DIR = _resolve_data_dir()
 PROGRESS_PATH = DATA_DIR / "progress.json"
 
 

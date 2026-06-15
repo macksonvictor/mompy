@@ -1,116 +1,144 @@
 # Mompy
 
-Mompy e uma plataforma de aprendizado de Python com visual CRT/industrial.
+![Mompy logo](frontend/assets/name_mompy.png)
 
-## Estrutura
+Mompy is a retro industrial Python learning app with guided lessons, missions,
+local progress, XP and a desktop-first experience powered by Python.
+
+Official site: [mompy.co](https://mompy.co)
+
+## Preview
+
+![Mompy preview](frontend/assets/previews/mompy-preview-refined.png)
+
+## What It Is
+
+Mompy teaches Python through a calm CRT-style interface:
+
+- guided lessons before each block of missions;
+- 30 beginner-friendly missions;
+- real Python validation in the backend;
+- safe initial execution of learner code in a separate process;
+- progress, XP and level controlled by Python;
+- local-first desktop app with pywebview.
+
+The visual layer stays in HTML/CSS/JavaScript. The app logic, mission data,
+validation, progress, XP and desktop shell are Python.
+
+## Architecture
 
 ```txt
 mompy/
   frontend/
     index.html
-    css/styles.css
-    js/app.js
+    css/
+    js/
     assets/
 
   backend/
+    api.py
     missions.py
     lessons.py
+    briefings.py
     validator.py
     progress.py
     xp.py
     code_runner.py
     storage.py
-    api.py
 
-  data/progress.json
+  data/
+    progress.example.json
+
   tests/
+  scripts/
+    build_windows.ps1
+
   main.py
+  requirements.txt
 ```
 
-## Frontend
+## Run From Source
 
-O frontend continua cuidando da experiencia visual:
-
-- telas CRT;
-- animacoes;
-- editor;
-- botoes;
-- assets;
-- audio;
-- fluxo visual atual.
-
-Para abrir direto no navegador:
-
-```bash
-python main.py --serve --port 8770
-```
-
-Depois acesse:
-
-```txt
-http://127.0.0.1:8770/
-```
-
-## App desktop Python
-
-Instale a dependencia desktop:
+Install dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-Abra o Mompy como aplicativo Python com pywebview:
+Open as a desktop app:
 
 ```bash
 python main.py
 ```
 
-Para apenas verificar o backend sem abrir janela:
+Check the backend without opening a window:
 
 ```bash
 python main.py --check
 ```
 
-## Backend Python
+Run the browser preview for development:
 
-O backend Python foi criado para assumir gradualmente a logica real do app:
+```bash
+python main.py --serve --port 8770
+```
 
-- dados das missoes;
-- dados das aulas;
-- validacao real das 30 missoes atuais;
-- progresso local;
-- XP e nivel;
-- API interna conectada ao frontend via pywebview;
-- API HTTP local para o modo navegador em `python main.py --serve`;
-- execucao segura inicial do codigo do aluno em processo isolado.
+Then open:
 
-Nesta fase, o backend valida a estrutura das respostas com AST e regras Python,
-executa codigo simples em sandbox conservador, captura o output e compara com o
-resultado esperado da missao.
+```txt
+http://127.0.0.1:8770/frontend/index.html
+```
 
-A trilha pedagogica segue uma curva de iniciante real:
+## Build For Windows
 
-1. Primeiros comandos com `print`.
-2. Variaveis e valores.
-3. Decisoes com `if`.
-4. Repeticoes com `for`.
-5. Listas.
-6. Funcoes.
+Generate a Windows desktop build with PyInstaller:
 
-## Testes
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/build_windows.ps1
+```
 
-Os testes usam apenas a biblioteca padrao do Python:
+Generate a zip package for a GitHub Release:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/build_windows.ps1 -Zip
+```
+
+The build output is created under:
+
+```txt
+dist/Mompy/Mompy.exe
+dist/Mompy-windows-x64.zip
+```
+
+Build outputs are ignored by Git and should be attached to GitHub Releases,
+not committed to the repository.
+
+## Tests
 
 ```bash
 python -m unittest discover -s tests
 ```
 
-## Roadmap
+## Releases
 
-- 10.1: organizar e salvar versao estavel.
-- 10.2: criar arquitetura frontend + backend Python.
-- 10.3: conectar frontend com backend Python usando pywebview.
-- 10.4: migrar validacao real das missoes para Python.
-- 10.5: execucao segura do codigo Python do usuario.
-- 10.6: progresso, XP e nivel controlados pelo backend Python.
-- 10.7: empacotar app Python instalavel.
+Installable builds will be published in GitHub Releases:
+
+https://github.com/hepter-studios/mompy/releases
+
+Do not assume a release exists until a tested package has been attached there.
+
+## Platform Status
+
+- Windows: build pipeline prepared and locally tested with PyInstaller.
+- macOS: planned.
+- Linux: planned.
+
+## Roadmap Status
+
+- 10.1: project organized and stable version saved.
+- 10.2: frontend + Python backend architecture.
+- 10.3: frontend connected to Python through pywebview/local API.
+- 10.4: mission validation migrated to Python.
+- 10.5: safer learner-code execution.
+- 10.6: progress, XP and level controlled by Python.
+- 10.7: Python desktop packaging prepared and locally tested.

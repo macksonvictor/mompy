@@ -6,13 +6,20 @@ import argparse
 import http.server
 import json
 import socketserver
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
 from backend.api import MompyAPI
 
 
-ROOT_DIR = Path(__file__).resolve().parent
+def app_root() -> Path:
+    if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
+        return Path(sys._MEIPASS)
+    return Path(__file__).resolve().parent
+
+
+ROOT_DIR = app_root()
 FRONTEND_DIR = ROOT_DIR / "frontend"
 FRONTEND_INDEX = FRONTEND_DIR / "index.html"
 
