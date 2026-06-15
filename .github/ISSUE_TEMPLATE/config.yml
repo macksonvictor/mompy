@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Mompy website
+    url: https://mompy.co
+    about: Visit the official Mompy website.
+  - name: GitHub Discussions
+    url: https://github.com/hepter-studios/mompy/discussions
+    about: Use discussions for open ideas, community topics and broader conversations.
