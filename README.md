@@ -14,16 +14,12 @@
 </p>
 
 <p align="center">
-  <a href="#english">English</a> | <a href="#portugues">Português</a>
+  <a href="#english">English</a> | <a href="README.pt-BR.md">Português</a>
 </p>
 
 <a id="english"></a>
 
 **Mompy** is a mission-based programming learning platform designed to make coding clearer, practical, and more engaging — starting with Python.
-
-<a id="portugues"></a>
-
-**Mompy** é uma plataforma de aprendizado de programação baseada em missões, criada para tornar o estudo de código mais claro, prático e envolvente — começando por Python.
 
 > [!NOTE]
 > Mompy is in active development. The first Windows package is available in [GitHub Releases](https://github.com/hepter-studios/mompy/releases), and the source code remains the canonical reference for every feature listed here.
@@ -432,6 +428,7 @@ Release rule:
 | File | Purpose |
 | --- | --- |
 | [README.md](README.md) | Product overview, screenshots, downloads, roadmap and source instructions. |
+| [README.pt-BR.md](README.pt-BR.md) | Portuguese overview for Mompy. |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution workflow, project standards and local development notes. |
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community expectations for issues, discussions and pull requests. |
 | [SECURITY.md](SECURITY.md) | Security policy, reporting guidance and local-first safety goals. |
@@ -449,6 +446,8 @@ Release rule:
 | Releases | [GitHub Releases](https://github.com/hepter-studios/mompy/releases) |
 | Latest release | [Mompy v0.1.0](https://github.com/hepter-studios/mompy/releases/tag/v0.1.0) |
 | Discord | [discord.gg/fqxvyGFyfa](https://discord.gg/fqxvyGFyfa) |
+| X / Twitter | [@macksonvictor26](https://x.com/macksonvictor26) |
+| Português | [README.pt-BR.md](README.pt-BR.md) |
 | Discussions | [GitHub Discussions](https://github.com/hepter-studios/mompy/discussions) |
 | Issues | [GitHub Issues](https://github.com/hepter-studios/mompy/issues) |
 | Contributors | [Contributors graph](https://github.com/hepter-studios/mompy/graphs/contributors) |
@@ -458,8 +457,6 @@ Release rule:
 | Support | [SUPPORT.md](SUPPORT.md) |
 | Build script | [scripts/build_windows.ps1](scripts/build_windows.ps1) |
 | Installer script | [scripts/build_windows_installer.ps1](scripts/build_windows_installer.ps1) |
-
-Additional official social links are intentionally not listed until they exist.
 
 ---
 
