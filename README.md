@@ -5,8 +5,25 @@
 </p>
 
 <p align="center">
-  <strong>Mompy is a mission-based programming learning platform designed to make coding clearer, practical, and more engaging — starting with Python.</strong>
+  <a href="https://discord.gg/fqxvyGFyfa">
+    <img alt="Discord" src="https://img.shields.io/badge/Discord-Community-5865F2?style=flat&logo=discord&logoColor=white">
+  </a>
+  <a href="https://x.com/macksonvictor26">
+    <img alt="Follow on X" src="https://img.shields.io/badge/Follow%20on%20X-@macksonvictor26-000000?style=flat&logo=x&logoColor=white">
+  </a>
 </p>
+
+<p align="center">
+  <a href="#english">English</a> | <a href="#portugues">Português</a>
+</p>
+
+<a id="english"></a>
+
+**Mompy** is a mission-based programming learning platform designed to make coding clearer, practical, and more engaging — starting with Python.
+
+<a id="portugues"></a>
+
+**Mompy** é uma plataforma de aprendizado de programação baseada em missões, criada para tornar o estudo de código mais claro, prático e envolvente — começando por Python.
 
 > [!NOTE]
 > Mompy is in active development. The first Windows package is available in [GitHub Releases](https://github.com/hepter-studios/mompy/releases), and the source code remains the canonical reference for every feature listed here.
