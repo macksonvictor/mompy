@@ -3,6 +3,7 @@
 <a href="https://github.com/hepter-studios/mompy">
   <img src="assets/branding/mompy-cover.webp" alt="Mompy retro CRT monitor preview" width="560">
 </a>
+
 # Mompy
 
  **A retro learning console for Python programming.**
