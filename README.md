@@ -30,7 +30,7 @@
 
 <p align="center">
   <a href="assets/media/mompy-demo.gif">
-    <img src="assets/media/mompy-demo-new.gif" alt="Mompy boot and app demo" width="760">
+    <img src="assets/media/mompy-demo.gif" alt="Mompy boot and app demo" width="760">
   </a>
 </p>
 
