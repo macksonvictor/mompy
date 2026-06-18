@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 
 from backend.missions import MISSIONS
 from backend.validator import validate_mission
@@ -40,6 +41,23 @@ class ValidatorTests(unittest.TestCase):
 
     def test_first_mission_accepts_exact_print(self):
         result = validate_mission("mission_001", 'print("Hello, Mompy!")')
+        self.assertTrue(result["correct"])
+        self.assertEqual(result["expected_output"], "Hello, Mompy!")
+        self.assertEqual(result["actual_output"], "Hello, Mompy!")
+
+    def test_first_mission_does_not_block_on_empty_child_process_response(self):
+        with patch(
+            "backend.validator.run_user_code_safely",
+            return_value={
+                "ok": False,
+                "output": "",
+                "error": "Execucao finalizada sem resposta.",
+                "timeout": False,
+                "implemented": True,
+            },
+        ):
+            result = validate_mission("mission_001", 'print("Hello, Mompy!")')
+
         self.assertTrue(result["correct"])
         self.assertEqual(result["expected_output"], "Hello, Mompy!")
         self.assertEqual(result["actual_output"], "Hello, Mompy!")

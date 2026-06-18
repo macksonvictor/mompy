@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import http.server
 import json
+import multiprocessing
 import socketserver
 import sys
 from pathlib import Path
@@ -180,4 +181,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    multiprocessing.freeze_support()
     main()

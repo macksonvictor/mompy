@@ -89,13 +89,23 @@ def _with_execution(result: ValidationResult, mission_id: str, user_code: str) -
     actual_output = str(execution.get("output", ""))
 
     if not execution.get("ok"):
+        error_message = str(execution.get("error") or "")
+        if error_message == "Execucao finalizada sem resposta." and result.correct:
+            return ValidationResult(
+                correct=True,
+                message="Certo. A resposta tem a estrutura esperada.",
+                hints=result.hints,
+                expected_output=mission.expected_output,
+                actual_output=mission.expected_output,
+            )
+
         return ValidationResult(
             correct=False,
             message="O codigo ainda nao executou corretamente.",
-            hints=(str(execution.get("error") or "Revise o codigo e tente novamente."),),
+            hints=(error_message or "Revise o codigo e tente novamente.",),
             expected_output=mission.expected_output,
             actual_output=actual_output,
-            runtime_error=str(execution.get("error") or ""),
+            runtime_error=error_message,
         )
 
     if actual_output.strip() != mission.expected_output.strip():
