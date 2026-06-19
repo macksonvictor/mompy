@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mompy - Retro Python Learning Console</title>
+    <meta name="description" content="Mompy is a retro learning console for Python programming with lessons, missions, progress, feedback, and challenges.">
+    <meta name="theme-color" content="#071008">
+    <meta property="og:title" content="Mompy - Retro Python Learning Console">
+    <meta property="og:description" content="A retro Python learning console with lessons, missions, progress, feedback, and challenges.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mompy.co">
+    <meta property="og:image" content="https://mompy.co/assets/media/mompy-start-screen.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="assets/brand/mompy-favicon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="site-noise" aria-hidden="true"></div>
+    <div class="site-scanlines" aria-hidden="true"></div>
+
+    <header class="site-header" data-reveal>
+      <a class="brand-lockup" href="#top" aria-label="Mompy home">
+        <img src="assets/brand/mompy-wordmark.png" alt="Mompy" class="brand-wordmark">
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#download">Download</a>
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#discord">Discord</a>
+        <a href="#github">GitHub</a>
+        <a href="#support">Support</a>
+      </nav>
+      <a class="nav-cta" href="https://github.com/hepter-studios/mompy/releases">Download</a>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-layout">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Python training system online</p>
+            <h1 id="hero-title">Mompy is a retro learning console for Python programming.</h1>
+            <p class="hero-description">
+              A focused desktop experience where learners practice real code through lessons,
+              missions, progress, feedback, and challenges.
+            </p>
+            <div class="hero-actions" aria-label="Main actions">
+              <a class="button button-primary" href="https://github.com/hepter-studios/mompy/releases">
+                <span class="button-icon play-icon" aria-hidden="true"></span>
+                Download
+              </a>
+              <a class="button" href="https://github.com/hepter-studios/mompy">
+                <span class="button-icon repo-icon" aria-hidden="true"></span>
+                GitHub
+              </a>
+              <a class="button" href="https://discord.gg/fqxvyGFyfa">
+                <span class="button-icon chat-icon" aria-hidden="true"></span>
+                Join Discord
+              </a>
+            </div>
+            <div class="hero-status-grid" aria-label="Mompy status">
+              <span>Windows build available</span>
+              <span>Python backend</span>
+              <span>Open source</span>
+            </div>
+            <div class="hero-mascot-chip" aria-label="Mompy assistant status">
+              <img src="assets/brand/mompy-mascot.webp" alt="" aria-hidden="true">
+              <span>Mompy is online and ready for Python practice.</span>
+            </div>
+          </div>
+
+          <div class="hero-console" data-reveal>
+            <div class="crt-shell" aria-label="Mompy boot console">
+              <img src="assets/ui/crt-monitor-empty.png" alt="" class="crt-shell-image" aria-hidden="true">
+              <div class="crt-screen">
+                <img src="assets/brand/mompy-wordmark.png" alt="Mompy" class="console-wordmark">
+                <pre class="boot-log" id="boot-log" aria-live="polite"></pre>
+                <div class="boot-progress" aria-hidden="true">
+                  <span></span>
+                </div>
+                <div class="console-ready">
+                  <a href="#download">Download</a>
+                  <a href="#demo">Watch demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="section demo-section" aria-labelledby="demo-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Live preview</p>
+          <h2 id="demo-title">The Mompy console in motion</h2>
+          <p>Boot sequence, first access, and the CRT training flow in one focused preview.</p>
+        </div>
+        <div class="demo-frame" data-reveal>
+          <div class="frame-header">
+            <span>mompy-demo.gif</span>
+            <span>CRT capture</span>
+          </div>
+          <img src="assets/media/mompy-demo.gif" alt="Mompy boot and interface demo" loading="lazy">
+        </div>
+      </section>
+
+      <section id="features" class="section features-section" aria-labelledby="features-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">What it does</p>
+          <h2 id="features-title">A training console built around practice</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="terminal-card" data-reveal>
+            <span class="card-kicker">LESSONS</span>
+            <h3>Guided concepts before missions</h3>
+            <p>Each block teaches the concept before asking the learner to use it.</p>
+          </article>
+          <article class="terminal-card" data-reveal>
+            <span class="card-kicker">MISSIONS</span>
+            <h3>Real Python challenges</h3>
+            <p>Write code, run it, see output, and receive immediate Mompy feedback.</p>
+          </article>
+          <article class="terminal-card" data-reveal>
+            <span class="card-kicker">PROGRESS</span>
+            <h3>XP and level tracking</h3>
+            <p>Progress is handled by the Python backend so the app can grow safely.</p>
+          </article>
+          <article class="terminal-card" data-reveal>
+            <span class="card-kicker">DESKTOP</span>
+            <h3>Installable app experience</h3>
+            <p>Mompy feels like a focused retro desktop tool, not a distracted web tab.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="screenshots" class="section screenshots-section" aria-labelledby="screenshots-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Screenshots</p>
+          <h2 id="screenshots-title">Inside the training system</h2>
+        </div>
+        <div class="screens-grid">
+          <figure class="screen-card wide" data-reveal>
+            <img src="assets/media/mompy-start-screen.webp" alt="Mompy start screen" loading="lazy">
+            <figcaption>Start screen</figcaption>
+          </figure>
+          <figure class="screen-card" data-reveal>
+            <img src="assets/media/mompy-first-access.webp" alt="Mompy first access flow" loading="lazy">
+            <figcaption>First access</figcaption>
+          </figure>
+          <figure class="screen-card" data-reveal>
+            <img src="assets/media/mompy-lesson-mission.webp" alt="Mompy lesson screen" loading="lazy">
+            <figcaption>Guided lesson</figcaption>
+          </figure>
+          <figure class="screen-card wide" data-reveal>
+            <img src="assets/media/mompy-mission-editor.webp" alt="Mompy mission editor" loading="lazy">
+            <figcaption>Mission editor</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="download" class="section download-section" aria-labelledby="download-title">
+        <div class="download-panel" data-reveal>
+          <div>
+            <p class="eyebrow">Download</p>
+            <h2 id="download-title">Get the current Windows release</h2>
+            <p>
+              Official downloads are published through GitHub Releases. macOS and Linux builds are planned.
+            </p>
+          </div>
+          <div class="download-actions">
+            <a class="button button-primary" href="https://github.com/hepter-studios/mompy/releases">Open Releases</a>
+            <a class="button" href="https://github.com/hepter-studios/mompy">View Source</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="section roadmap-section" aria-labelledby="roadmap-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Roadmap</p>
+          <h2 id="roadmap-title">From beginner missions to a full learning system</h2>
+        </div>
+        <div class="roadmap-track">
+          <article class="roadmap-item complete" data-reveal>
+            <span>01</span>
+            <h3>Python desktop app</h3>
+            <p>Retro CRT interface, lessons, missions, output, and progress.</p>
+          </article>
+          <article class="roadmap-item active" data-reveal>
+            <span>02</span>
+            <h3>Stable releases</h3>
+            <p>Installer, portable zip, releases, documentation, and support channels.</p>
+          </article>
+          <article class="roadmap-item" data-reveal>
+            <span>03</span>
+            <h3>Website and community</h3>
+            <p>Official site, Discord, guides, feedback, and a cleaner public hub.</p>
+          </article>
+          <article class="roadmap-item" data-reveal>
+            <span>04</span>
+            <h3>More platforms</h3>
+            <p>macOS, Linux, richer missions, and future language-focused editions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="discord" class="section community-section" aria-labelledby="discord-title">
+        <div class="community-copy" data-reveal>
+          <img src="assets/brand/mompy-mascot.webp" alt="" class="community-mascot" aria-hidden="true">
+          <p class="eyebrow">Community</p>
+          <h2 id="discord-title">Join the Mompy Discord</h2>
+          <p>
+            Ask questions, report problems, follow releases, share progress, and help shape the next missions.
+          </p>
+          <a class="button button-primary" href="https://discord.gg/fqxvyGFyfa">Join Discord</a>
+        </div>
+        <div class="discord-widget" data-reveal>
+          <iframe
+            title="Mompy Discord widget"
+            src="https://discord.com/widget?id=1516113994287415316&theme=dark"
+            width="350"
+            height="500"
+            allowtransparency="true"
+            frameborder="0"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+          </iframe>
+        </div>
+      </section>
+
+      <section id="github" class="section github-section" aria-labelledby="github-title">
+        <div class="code-panel" data-reveal>
+          <div class="panel-topline">
+            <span>repository</span>
+            <span>github.com/hepter-studios/mompy</span>
+          </div>
+          <pre><code>$ git clone https://github.com/hepter-studios/mompy
+$ cd mompy
+$ python main.py</code></pre>
+        </div>
+        <div class="github-copy" data-reveal>
+          <p class="eyebrow">Open source</p>
+          <h2 id="github-title">Built in public, shaped by feedback</h2>
+          <p>
+            Mompy is developed as an open source Python learning project by Hepter Studios.
+            Bugs, ideas, and improvements are tracked on GitHub.
+          </p>
+          <div class="link-list">
+            <a href="https://github.com/hepter-studios/mompy">Repository</a>
+            <a href="https://github.com/hepter-studios/mompy/issues">Issues</a>
+            <a href="https://github.com/hepter-studios/mompy/releases">Releases</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section support-section" aria-labelledby="support-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Support</p>
+          <h2 id="support-title">Need help or want to contribute?</h2>
+        </div>
+        <div class="support-grid">
+          <a class="support-card" href="https://discord.gg/fqxvyGFyfa" data-reveal>
+            <span>Community chat</span>
+            <strong>Discord</strong>
+          </a>
+          <a class="support-card" href="https://github.com/hepter-studios/mompy/issues" data-reveal>
+            <span>Report a bug</span>
+            <strong>GitHub Issues</strong>
+          </a>
+          <a class="support-card" href="https://github.com/hepter-studios/mompy/releases" data-reveal>
+            <span>Install Mompy</span>
+            <strong>Releases</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/brand/hepter-symbol.png" alt="" aria-hidden="true">
+        <span>Hepter Studios</span>
+      </div>
+      <p>Mompy is a retro learning console for Python programming.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
