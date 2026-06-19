@@ -71,6 +71,25 @@ Already installed Mompy? Download and run the newest Windows installer from Rele
 
 ---
 
+## 💚 Support Mompy
+
+Mompy is an open-source project. If you like the idea and want to support development, you can sponsor the project through GitHub Sponsors.
+
+<p>
+  <a href="https://github.com/sponsors/macksonvictor">
+    <img alt="Sponsor Mompy" src="https://img.shields.io/badge/Sponsor-Mompy-8cff3a?style=for-the-badge&logo=githubsponsors&logoColor=black">
+  </a>
+  <a href="SPONSOR.md">
+    <img alt="Sponsor information" src="https://img.shields.io/badge/Sponsor-info-2f3136?style=for-the-badge&logo=github&logoColor=8cff3a">
+  </a>
+</p>
+
+Your support helps with new lessons, missions, bug fixes, documentation, releases, design improvements and community growth.
+
+Sponsors may also receive an optional Discord sponsor role as recognition inside the Mompy community.
+
+---
+
 ## 👽 Questions? Problems? Suggestions?
 
 Join the Mompy community, report bugs, suggest improvements or ask for help through the official channels below.
@@ -429,6 +448,7 @@ Release rule:
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community expectations for issues, discussions and pull requests. |
 | [SECURITY.md](SECURITY.md) | Security policy, reporting guidance and local-first safety goals. |
 | [SUPPORT.md](SUPPORT.md) | Where to get help, report problems and find official links. |
+| [SPONSOR.md](SPONSOR.md) | How to support Mompy through GitHub Sponsors. |
 | [LICENSE](LICENSE) | Ownership and usage terms. |
 
 ---
@@ -442,6 +462,8 @@ Release rule:
 | Releases | [GitHub Releases](https://github.com/hepter-studios/mompy/releases) |
 | Latest release | [Mompy v0.1.1](https://github.com/hepter-studios/mompy/releases/tag/v0.1.1) |
 | Discord | [discord.gg/fqxvyGFyfa](https://discord.gg/fqxvyGFyfa) |
+| Sponsor | [GitHub Sponsors](https://github.com/sponsors/macksonvictor) |
+| Sponsor guide | [SPONSOR.md](SPONSOR.md) |
 | Português | [README.pt-BR.md](README.pt-BR.md) |
 | Discussions | [GitHub Discussions](https://github.com/hepter-studios/mompy/discussions) |
 | Issues | [GitHub Issues](https://github.com/hepter-studios/mompy/issues) |
@@ -476,4 +498,3 @@ Release rule:
 ## 📜 License
 
 License information is available in [LICENSE](LICENSE).
-
